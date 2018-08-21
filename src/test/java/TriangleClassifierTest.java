@@ -29,6 +29,7 @@ class TriangleClassifierTest {
         String actual = TriangleClassifier.result(A, B, C);
         assertEquals(expected, actual);
     }
+
     @Test
     @DisplayName("Test normal triangle")
     public void testNormalTriangle() {
@@ -41,4 +42,27 @@ class TriangleClassifierTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("Test not a triangle")
+    public void testNotATriangle() {
+        final int A = 8;
+        final int B = 2;
+        final int C = 3;
+
+        String expected = "not a triangle";
+        String actual = TriangleClassifier.result(A, B, C);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Test not triangle")
+    public void testNotTriangle() {
+        final int A = -1;
+        final int B = 2;
+        final int C = 1;
+
+        String expected = "not a triangle";
+        String actual = TriangleClassifier.result(A, B, C);
+        assertEquals(expected, actual);
+    }
 }
